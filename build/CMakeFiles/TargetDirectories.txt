@@ -1,0 +1,10 @@
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/install/strip.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/install/local.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/install.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/list_install_components.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/rebuild_cache.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/edit_cache.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/App.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/calibrate.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/App_autogen.dir
+/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/calibrate_autogen.dir

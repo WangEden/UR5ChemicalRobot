@@ -1,0 +1,171 @@
+{
+	"BUILD_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen",
+	"CMAKE_BINARY_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew",
+	"HEADERS" : 
+	[
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/Calculation.h",
+			"MU",
+			"6YEA5652QU/moc_Calculation.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/CameraThread.h",
+			"MU",
+			"6YEA5652QU/moc_CameraThread.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/CameraWidget.h",
+			"MU",
+			"6YEA5652QU/moc_CameraWidget.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/Function.h",
+			"MU",
+			"6YEA5652QU/moc_Function.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/RS485.h",
+			"MU",
+			"6YEA5652QU/moc_RS485.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/UR5.h",
+			"MU",
+			"6YEA5652QU/moc_UR5.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/UR5Thread.h",
+			"MU",
+			"6YEA5652QU/moc_UR5Thread.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/d435i.h",
+			"MU",
+			"6YEA5652QU/moc_d435i.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/serialport.h",
+			"MU",
+			"6YEA5652QU/moc_serialport.cpp"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/include/widget.h",
+			"MU",
+			"6YEA5652QU/moc_widget.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"BOOST_THREAD_DYN_LINK",
+		"BOOST_THREAD_NO_LIB",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_WIDGETS_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/eden/Project/AllFunc/app_ew820/app_ew/include",
+		"/home/eden/Project/AllFunc/app_ew820/app_ew/modules/include",
+		"/opt/Qt/5.15.2/gcc_64/include",
+		"/opt/Qt/5.15.2/gcc_64/include/QtWidgets",
+		"/opt/Qt/5.15.2/gcc_64/include/QtGui",
+		"/opt/Qt/5.15.2/gcc_64/include/QtCore",
+		"/opt/Qt/5.15.2/gcc_64/mkspecs/linux-g++",
+		"/opt/Qt/5.15.2/gcc_64/include/QtSerialPort",
+		"/home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4",
+		"/home/eden/App/anaconda3/include",
+		"/usr/include/eigen3",
+		"/usr/include",
+		"/usr/include/c++/7",
+		"/usr/include/x86_64-linux-gnu/c++/7",
+		"/usr/include/c++/7/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 14,
+	"PARSE_CACHE_FILE" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/App_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/opt/Qt/5.15.2/gcc_64/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/opt/Qt/5.15.2/gcc_64/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/App_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/RS485.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/UR5.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/d435i.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/serialport.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Calculation.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Function.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/CameraThread.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/UR5Thread.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/CameraWidget.cpp",
+			"MU"
+		],
+		[
+			"/home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/widget.cpp",
+			"MU"
+		],
+		[ "/home/eden/Project/AllFunc/app_ew820/app_ew/src/main.cpp", "MU" ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

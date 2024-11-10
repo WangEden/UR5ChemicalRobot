@@ -1,0 +1,338 @@
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_5b2cb && [1/2] Building CXX object CMakeFiles/cmTC_5b2cb.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_5b2cb
+FAILED: cmTC_5b2cb 
+: && /usr/bin/c++  -DCMAKE_HAVE_LIBC_PTHREAD   CMakeFiles/cmTC_5b2cb.dir/src.cxx.o  -o cmTC_5b2cb   && :
+/usr/bin/ld: CMakeFiles/cmTC_5b2cb.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_10eec && [1/2] Building CXX object CMakeFiles/cmTC_10eec.dir/CheckFunctionExists.cxx.o
+[2/2] Linking CXX executable cmTC_10eec
+FAILED: cmTC_10eec 
+: && /usr/bin/c++  -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_10eec.dir/CheckFunctionExists.cxx.o  -o cmTC_10eec  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_30dba/fast && /usr/bin/make -f CMakeFiles/cmTC_30dba.dir/build.make CMakeFiles/cmTC_30dba.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_30dba.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_30dba.dir/src.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_30dba
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30dba.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_30dba.dir/src.cxx.o  -o cmTC_30dba 
+/usr/bin/ld: CMakeFiles/cmTC_30dba.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_30dba.dir/build.make:87：cmTC_30dba] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_30dba/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_61370/fast && /usr/bin/make -f CMakeFiles/cmTC_61370.dir/build.make CMakeFiles/cmTC_61370.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_61370.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_61370.dir/CheckFunctionExists.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_61370
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61370.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_61370.dir/CheckFunctionExists.cxx.o  -o cmTC_61370  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_61370.dir/build.make:87：cmTC_61370] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_61370/fast] 错误 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_032d1/fast && /usr/bin/make -f CMakeFiles/cmTC_032d1.dir/build.make CMakeFiles/cmTC_032d1.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_032d1.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_032d1.dir/src.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_032d1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_032d1.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_032d1.dir/src.cxx.o  -o cmTC_032d1 
+/usr/bin/ld: CMakeFiles/cmTC_032d1.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_032d1.dir/build.make:87：cmTC_032d1] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_032d1/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_35a37/fast && /usr/bin/make -f CMakeFiles/cmTC_35a37.dir/build.make CMakeFiles/cmTC_35a37.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_35a37.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_35a37.dir/CheckFunctionExists.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_35a37
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35a37.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_35a37.dir/CheckFunctionExists.cxx.o  -o cmTC_35a37  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_35a37.dir/build.make:87：cmTC_35a37] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_35a37/fast] 错误 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b75ac/fast && /usr/bin/make -f CMakeFiles/cmTC_b75ac.dir/build.make CMakeFiles/cmTC_b75ac.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_b75ac.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_b75ac.dir/src.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_b75ac
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b75ac.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b75ac.dir/src.cxx.o  -o cmTC_b75ac 
+/usr/bin/ld: CMakeFiles/cmTC_b75ac.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b75ac.dir/build.make:87：cmTC_b75ac] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_b75ac/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_995c8/fast && /usr/bin/make -f CMakeFiles/cmTC_995c8.dir/build.make CMakeFiles/cmTC_995c8.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_995c8.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_995c8.dir/CheckFunctionExists.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_995c8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_995c8.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_995c8.dir/CheckFunctionExists.cxx.o  -o cmTC_995c8  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_995c8.dir/build.make:87：cmTC_995c8] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_995c8/fast] 错误 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_970c2/fast && /usr/bin/make -f CMakeFiles/cmTC_970c2.dir/build.make CMakeFiles/cmTC_970c2.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_970c2.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_970c2.dir/src.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_970c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_970c2.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_970c2.dir/src.cxx.o  -o cmTC_970c2 
+/usr/bin/ld: CMakeFiles/cmTC_970c2.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_970c2.dir/build.make:87：cmTC_970c2] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_970c2/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_af92b/fast && /usr/bin/make -f CMakeFiles/cmTC_af92b.dir/build.make CMakeFiles/cmTC_af92b.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_af92b.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_af92b.dir/CheckFunctionExists.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_af92b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af92b.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_af92b.dir/CheckFunctionExists.cxx.o  -o cmTC_af92b  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_af92b.dir/build.make:87：cmTC_af92b] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_af92b/fast] 错误 2
+
+
+
+Performing C++ SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_31cda/fast && /usr/bin/make -f CMakeFiles/cmTC_31cda.dir/build.make CMakeFiles/cmTC_31cda.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_31cda.dir/src.cxx.o
+/usr/bin/c++    -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_31cda.dir/src.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_31cda
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31cda.dir/link.txt --verbose=1
+/usr/bin/c++   -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_31cda.dir/src.cxx.o  -o cmTC_31cda 
+/usr/bin/ld: CMakeFiles/cmTC_31cda.dir/src.cxx.o: in function `main':
+src.cxx:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.cxx:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.cxx:(.text+0x5b): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_31cda.dir/build.make:87：cmTC_31cda] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_31cda/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_51129/fast && /usr/bin/make -f CMakeFiles/cmTC_51129.dir/build.make CMakeFiles/cmTC_51129.dir/build
+make[1]: 进入目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_51129.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_51129.dir/CheckFunctionExists.cxx.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_51129
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51129.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_51129.dir/CheckFunctionExists.cxx.o  -o cmTC_51129  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_51129.dir/build.make:87：cmTC_51129] 错误 1
+make[1]: 离开目录“/home/eden/Project/AllFunc/app_ew820/app_ew/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_51129/fast] 错误 2
+
+
+

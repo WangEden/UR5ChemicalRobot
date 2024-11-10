@@ -1,0 +1,301 @@
+#include "Function.h"
+#include <QDebug>
+#include <QThread>
+#include <QTimer>
+#include <opencv2/xfeatures2d.hpp>
+#include <vector>
+
+
+Function::Function(QObject *parent) : QObject(parent)
+{
+}
+
+Function::~Function()
+{
+}
+
+void Function::recv_mat(cv::Mat mat)
+{
+    current_mat = mat;
+}
+
+void Function::init_UR5_position(UR5 * ur5)
+{
+    // vector<double> init_pose = {-0.0619614, -0.443324, 0.231807, -0.0199154, -3.1295, 0.00661932};
+    // vector<double> init_pose = {-0.0619701, -0.443327, 0.313109, -0.0199363, -3.1295, 0.00667294};
+    // vector<double> init_pose = {-0.0619756, -0.443327, 0.407511, -0.0199297, -3.12949, 0.00665348}; // 水平向下看
+    // vector<double> init_pose = { 0.270617, -0.429232, 0.371516, -0.777165, 2.70524, 0.0447376};
+    // vector<double> init_pose = {-0.0633662, -0.433649, 0.284346, -0.0842406, 2.67307, 0.00183697};
+
+    vector<double> init_pose = {-0.0633662, -0.433649, 0.284346, 0.033, 2.67307, 0.00183697};
+
+    ur5->moveJP(init_pose);
+}
+
+void Function::shelf_grasp(Camera * camera, UR5 * ur5, cv::Mat matrix) {
+    qDebug() << "子线程" << QThread::currentThreadId();
+    // object points
+    vector<vector<Point3d>> object_points = {
+    {Point3d(0.00, 0.00, 0.00), Point3d(0.00, 0.01, 0.00), Point3d(0.00, 0.02, 0.00), Point3d(0.05, 0.00, 0.00), Point3d(0.05, 0.02, 0.00)}, \
+    {Point3d(0.00, 0.01, 0.00), Point3d(0.01, 0.00, 0.00), Point3d(0.01, 0.01, 0.00), Point3d(0.01, 0.02, 0.00), Point3d(0.02, 0.00, 0.00)}, \
+    {Point3d(0.00, 0.01, 0.00), Point3d(0.00, 0.02, 0.00), Point3d(0.01, 0.00, 0.00), Point3d(0.02, 0.01, 0.00), Point3d(0.02, 0.02, 0.00)}};
+    
+    // image points
+    vector<Point2d> center_points_all, center_points_5;
+    // vector<Vec3f> circles;
+    vector<cv::Point2d> circles;
+    Point2d center;
+    // Vec3f circle;
+    Point2d circle;
+    vector<Point2f> projection_points;
+    int radius;
+    // image processing
+    Mat color_mat, hsv_mat, mask_low, mask_high, mask, gray_mat, shelf_mask;
+    Mat labels, stats, centroids;
+    Mat intrinsics_mat, distCoeffs;
+    tuple<Mat, Mat> images;
+    // calculate pose
+    Mat V_Shelf2Cam, R_Shelf2Cam, T_Shelf2Cam, RT_Shelf2Cam, RT_Shelf2Base, RT_End2Base;
+    Mat R_Cam2End, T_Cam2End, RT_Cam2End;
+
+    // vector<double> init_pose = {-0.0526588, -0.589644, 0.329795, 0.0195414, 3.13016, -0.0104116};
+    // vector<double> init_pose = {-0.0619614, -0.443324, 0.231807, -0.0199154, -3.1295, 0.00661932};
+    // vector<double> init_pose = {-0.0619701, -0.443327, 0.313109, -0.0199363, -3.1295, 0.00667294};
+    // vector<double> init_pose = {-0.0619756, -0.443327, 0.407511, -0.0199297, -3.12949, 0.00665348};
+    vector<double> init_pose = { 0.270617, -0.429232, 0.371516, -0.777165, 2.70524, 0.0447376};
+    
+    Mat P_Shelf_1 = (Mat_<double>(4, 1) << 0.025, 0.01, -0.090, 1.0);
+    Mat P_Shelf_1_1 = (Mat_<double>(4, 1) << 0.025, 0.05, -0.150, 1.0);
+    Mat P_Shelf_2 = (Mat_<double>(4, 1) << 0.025, 0.01, -0.030, 1.0);
+
+    Mat target_P_1, target_P_1_1, target_P_2;
+    vector<double> orign_rotation = {init_pose[3], init_pose[4], init_pose[5]};
+    // vector<double> target_rotation = {0.023, -3.130, 0.010};
+    vector<double> target_rotation = {-0.0204577, -3.13029, 0.0247043};
+    
+    vector<double> target_pose, target_pose2;
+
+    string color_filename;
+
+    double projection_error;
+    tuple<Mat, Mat, vector<Point2f>, string> shelf_pose;
+
+    double x_max = 0.13275;
+    double x_min = -0.20079;
+    double y_max = -0.38654;
+    double y_min = -0.68844;
+    double z_max = 0.45000;
+    double z_min = 0.09247;
+
+    bool save = true;
+    bool projection = true;
+    string type;
+    try {
+    // 读取相机到末端的位姿
+    cv::FileStorage fs_read("../data/Cam2End.yml", FileStorage::READ);
+    if (fs_read.isOpened()) {
+        fs_read["R_Cam2End"] >> R_Cam2End;
+        fs_read["T_Cam2End"] >> T_Cam2End;
+        fs_read.release();
+    }
+    RT_Cam2End = ur5->R_and_T2RT(R_Cam2End, T_Cam2End);
+    std::cout << "RT_Cam2End" << RT_Cam2End << std::endl;
+
+    // 移动到初始位置
+    ur5->moveJP(init_pose);
+
+    int times= 0;
+    while (1) 
+    {
+        std::cout << "第" << times << "次识别------------------------------" << std::endl;
+        // 获取图片
+        images = camera->get_images();
+        color_mat = get<0>(images);
+
+        // 获取圆
+        // circles = camera->get_circles(save, 0);
+        circles = camera->get_ellipse(save, 0);
+
+        // 滤波
+        cv::medianBlur(color_mat, color_mat, 3);
+        cv::imwrite("../debug/images/img1-original.png", color_mat);
+        std::cout << "存入原始图片" << std::endl;
+
+        // 颜色识别提取
+        cv::cvtColor(color_mat, hsv_mat, cv::COLOR_BGR2HSV);
+        // cv::inRange(hsv_mat, cv::Scalar(0, 0, 0), cv::Scalar(10, 255, 255), mask_low);
+        // cv::inRange(hsv_mat, cv::Scalar(160, 0, 0), cv::Scalar(179, 255, 255), mask_high);
+        cv::inRange(hsv_mat, cv::Scalar(0, 43, 46), cv::Scalar(10, 255, 255), mask_low);
+        cv::inRange(hsv_mat, cv::Scalar(156, 43, 46), cv::Scalar(180, 255, 255), mask_high);
+        cv::addWeighted(mask_low, 1, mask_high, 1, 0, mask);
+        cv::imwrite("../debug/images/img2-mask.png", mask);
+        std::cout << "存入mask图片" << std::endl;
+
+        // 形态学处理
+        cv::Mat element1 = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5));
+        cv::Mat element2 = cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(2, 2));
+        cv::dilate(mask, mask, element1);
+        cv::imwrite("../debug/images/img3-morphomask.png", mask);
+        std::cout << "存入形态学处理后的mask图片" << std::endl;
+
+        // 画出筛选之前的圆
+        cv::Mat color_copy = color_mat.clone();
+        for (size_t i = 0; i < circles.size(); i++)
+        {
+            // if (mask.at<uchar>(cvRound(circles[i][1]), cvRound(circles[i][0])) == 255)
+            // {
+                // circle = circles[i];
+                // center = Point2d(circle[0], circle[1]);
+                center = circle;
+                // radius = circle[2];
+                radius = 1;
+                cv::circle(color_copy, center, radius, cv::Scalar(255, 0, 255), 1, cv::LINE_AA);
+            // }
+        }
+        std::cout << "筛选前圆的数量" << circles.size() << std::endl;
+        cv::imwrite("../debug/images/img4-circle-before.png", color_copy);
+        std::cout << "存入筛选前查找的圆的图片" << std::endl;
+
+        cv::Mat shelf_rect = color_mat.clone();
+
+        // 筛选圆，选出红色的圆
+        for (size_t i = 0; i < circles.size(); i++)
+        {
+            if (
+                mask.at<uchar>(cvRound(circles[i].y), cvRound(circles[i].x)) == 255
+            //     // circles[i][1] > rect.y && circles[i][1] < rect.y + rect.height &&
+            //     // circles[i][0] > rect.x && circles[i][0] < rect.x + rect.width
+            )
+            {
+                circle = circles[i];
+                // center = cv::Point2d(circle[0], circle[1]);
+                center = circle;
+                center_points_all.push_back(center);
+                radius = 1;
+                cv::circle(color_mat, center, radius, cv::Scalar(255, 0, 255), 1, cv::LINE_AA);
+            }
+        }
+
+        if (center_points_all.size() < 5)
+        {
+            times++;
+            sleep(1);
+            continue; // 重新识别
+        }
+
+        std::cout << "筛选后圆的数量" << center_points_all.size() << std::endl;
+        std::cout << "存入筛选后查找的圆的图片" << std::endl;
+        imwrite("../debug/images/img5-circle-after.png", color_mat);
+        std::cout << "本次识别圆的数量" << center_points_all.size() << std::endl;
+
+        // 启动定时器计时，长时间找不到就轻微移动机械臂重新识别
+        // 获取试管架位姿
+        std::cout << "开始计算位姿..." << std::endl;
+        bool get_pose = false;
+        shelf_pose = camera->get_shelf_pose(object_points, center_points_all, get_pose);
+        string type = get<3>(shelf_pose);
+        if (type == "none")
+        {
+            std::cout << "识别失败，重新识别" << std::endl;
+            center_points_all.clear();
+            auto current_pose_tuple = ur5->getCurrentPositions();
+            vector<double> current_pose = get<1>(current_pose_tuple);
+            current_pose[2] += 0.005; // z轴上升5mm后重新识别
+            ur5->moveJP(current_pose);
+            times++;
+            sleep(1);
+            continue;
+        }
+        else {
+            break;
+        }
+    }
+    /*
+    旋转：
+        末端坐标系中，末端点的坐标为(0, 0, 0)
+        基坐标系下的一个点
+        架子相对于基座的旋转矩阵 = 架子相对于相机的旋转矩阵 * 相机相对于末端的旋转矩阵 * 末端相对于基座的旋转矩阵
+    */
+    type = get<3>(shelf_pose);
+    cout << type << endl;
+    R_Shelf2Cam = get<0>(shelf_pose); // 试管架物理坐标系到相机坐标系的旋转矩阵
+    T_Shelf2Cam = get<1>(shelf_pose);
+    projection_points = get<2>(shelf_pose);
+
+    auto RT_EndBase_tuple = ur5->getCurrentRT();
+    auto R_End2Base = get<0>(RT_EndBase_tuple);
+
+    RT_Shelf2Cam = ur5->R_and_T2RT(R_Shelf2Cam, T_Shelf2Cam);
+
+    //  
+    Mat_<double> target_rotation_(1, 3, target_rotation.data()); 
+    Mat targetR_M = ur5->eulerAnglesToRotationMatrix(target_rotation_);
+    Mat targetR = targetR_M * R_Shelf2Cam * R_Cam2End ;
+
+    // Mat targetR = R_End2Base * R_Cam2End * R_Shelf2Cam;
+
+    cv::Mat target_rotation_pose;
+    cv::Rodrigues(targetR, target_rotation_pose);
+
+    cout<<"target_rotation_vector: \n" << target_rotation_pose << endl;
+
+    for (size_t i = 0; i < projection_points.size(); i++)
+    {
+        Point2f pt = projection_points[i];
+        cv::circle(color_mat, pt, 4, Scalar(0, 0, 255), -1);
+        // cout << pt.x << "\t" << pt.y << endl;
+    }
+    cout << "存入重投影的图片" << endl;
+    imwrite("../debug/images/img6-projection.png", color_mat);
+    // imshow("projection: ", color_mat);
+    color_filename = "../images/projection.png";
+    imwrite(color_filename, color_mat); 
+
+    // calculate pose
+    tuple<cv::Mat, cv::Mat> array2 = ur5->getCurrentRT();
+    RT_End2Base = ur5->R_and_T2RT(get<0>(array2), get<1>(array2));
+    // cout << RT_End2Base << endl;
+    RT_Shelf2Base =  RT_End2Base * RT_Cam2End * RT_Shelf2Cam;
+
+    // 移动到第二次识别点
+    target_P_1 = RT_Shelf2Base * P_Shelf_1;
+    target_P_2 = RT_Shelf2Base * P_Shelf_2;
+
+    cout << "targetP1:" <<endl;
+    cout << target_P_1 << endl;
+    target_pose.push_back(target_P_1.at<double>(0));
+    target_pose.push_back(target_P_1.at<double>(1));
+    target_pose.push_back(target_P_1.at<double>(2));
+    // target_pose.insert(target_pose.end(), target_rotation.begin(), target_rotation.end());
+    target_pose.push_back(target_rotation_pose.at<double>(0));
+    target_pose.push_back(target_rotation_pose.at<double>(1));
+    target_pose.push_back(target_rotation_pose.at<double>(2));
+    
+    for (auto element : target_pose)
+    {
+        cout << element << "\t" << endl;
+    }
+    ur5->moveJP(target_pose);
+    // ur5->moveJP(target_P_1);
+
+    cout << target_P_2 << endl;
+    target_pose2.push_back(target_P_2.at<double>(0));
+    target_pose2.push_back(target_P_2.at<double>(1));
+    target_pose2.push_back(target_P_2.at<double>(2));
+    // target_pose2.insert(target_pose2.end(), target_rotation.begin(), target_rotation.end());
+    target_pose2.push_back(target_rotation_pose.at<double>(0));
+    target_pose2.push_back(target_rotation_pose.at<double>(1));
+    target_pose2.push_back(target_rotation_pose.at<double>(2));
+    for (auto element : target_pose2)
+    {
+        cout << element << "\t" << endl;
+    }
+    ur5->moveJP(target_pose2);
+    // ur5->moveJP(target_P_2);
+    emit shelf_grasp_finished();
+    }
+    catch (const std::exception& e) {
+        std::cerr << e.what() << '\n';
+        emit shelf_grasp_finished();
+    }
+}

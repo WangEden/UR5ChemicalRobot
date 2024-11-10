@@ -1,0 +1,67 @@
+%YAML 1.0
+---
+width: 1200
+height: 800
+
+R_Cam2End: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ -9.9954426007033881e-01, -3.0081516521934797e-02,
+       -2.5247820063254377e-03, 3.0093273301366602e-02,
+       -9.9953578262268139e-01, -4.7554346670970783e-03,
+       -2.3805592721368976e-03, -4.8292463805791105e-03,
+       9.9998550555342902e-01 ]
+
+T_Cam2End: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [ 3.4734136129813548e-02, 8.9754889935089607e-02,
+       -7.4466516567461435e-02 ]
+
+R_Grasp2End: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 
+
+   ]
+
+T_Grasp2End: !!opencv-matrix
+    rows: 3
+    cols: 1
+    dt: d
+    data: [ 
+      
+    ]
+
+# Intrinsics_Mat: !!opencv-matrix
+#    rows: 3
+#    cols: 3
+#    dt: d
+#    data: [606.9449462890625, 0, 327.5874633789062,
+#           0, 606.5856323242188, 246.5499114990234,
+#           0, 0, 1]
+
+# DistCoeffs_Mat: !!opencv-matrix
+#     rows: 5
+#     cols: 1
+#     dt: d
+#     data: [
+#       0, 0, 0, 0, 0
+#     ]
+
+Red_HSV_1_H_Low: 0
+Red_HSV_1_H_High: 10
+Red_HSV_1_S_Low: 100
+Red_HSV_1_S_High: 255
+Red_HSV_1_V_Low: 100
+Red_HSV_1_V_High: 255
+
+Red_HSV_2_H_Low: 160
+Red_HSV_2_H_High: 180
+Red_HSV_2_S_Low: 100
+Red_HSV_2_S_High: 255
+Red_HSV_2_V_Low: 100
+Red_HSV_2_V_High: 255

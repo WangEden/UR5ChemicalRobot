@@ -1,0 +1,87 @@
+[
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/App_autogen/mocs_compilation.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/mocs_compilation.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/main.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/main.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/main.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Widget/widget.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/widget.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/widget.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Device/serialport.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/serialport.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/serialport.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Device/d435i.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/d435i.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/d435i.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Device/RS485.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/RS485.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/RS485.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Device/UR5.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/UR5.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/UR5.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Widget/CameraWidget.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/CameraWidget.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Widget/CameraWidget.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Thread/CameraThread.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/CameraThread.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/CameraThread.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Function/Function.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Function.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Function.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Thread/UR5Thread.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/UR5Thread.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Thread/UR5Thread.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_WIDGETS_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/App_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /opt/Qt/5.15.2/gcc_64/include -isystem /opt/Qt/5.15.2/gcc_64/include/QtWidgets -isystem /opt/Qt/5.15.2/gcc_64/include/QtGui -isystem /opt/Qt/5.15.2/gcc_64/include/QtCore -isystem /opt/Qt/5.15.2/gcc_64/./mkspecs/linux-g++ -isystem /opt/Qt/5.15.2/gcc_64/include/QtSerialPort -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -fPIC -std=c++17 -std=gnu++1z -o CMakeFiles/App.dir/src/Function/Calculation.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Calculation.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Calculation.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -std=c++17 -std=gnu++1z -o CMakeFiles/calibrate.dir/calibrate_autogen/mocs_compilation.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/mocs_compilation.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -std=c++17 -std=gnu++1z -o CMakeFiles/calibrate.dir/src/Calibrate/calibrate.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Calibrate/calibrate.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Calibrate/calibrate.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -std=c++17 -std=gnu++1z -o CMakeFiles/calibrate.dir/src/Device/d435i.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/d435i.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/d435i.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -std=c++17 -std=gnu++1z -o CMakeFiles/calibrate.dir/src/Device/UR5.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/UR5.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Device/UR5.cpp"
+},
+{
+  "directory": "/home/eden/Project/AllFunc/app_ew820/app_ew/build",
+  "command": "/usr/bin/c++  -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/eden/Project/AllFunc/app_ew820/app_ew/build/calibrate_autogen/include -I/home/eden/Project/AllFunc/app_ew820/app_ew/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include -isystem /home/eden/Project/AllFunc/app_ew820/app_ew/modules/include/opencv4 -isystem /home/eden/App/anaconda3/include -isystem /usr/include/eigen3  -g   -std=c++17 -std=gnu++1z -o CMakeFiles/calibrate.dir/src/Function/Calculation.cpp.o -c /home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Calculation.cpp",
+  "file": "/home/eden/Project/AllFunc/app_ew820/app_ew/src/Function/Calculation.cpp"
+}
+]

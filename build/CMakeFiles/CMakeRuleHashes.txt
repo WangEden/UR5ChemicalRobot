@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+10dcd815443f917a2629b6974945b6c9 ../settings/App_zh_CN.ts
+8339f82275d5905d9b3dd959aeb52ffd CMakeFiles/App_autogen
+d29adeb8a89cd635ab4544812a561984 CMakeFiles/calibrate_autogen
