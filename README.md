@@ -1,9 +1,9 @@
 一个Qt程序，用于图像处理和UR5机器人控制
 
 测试视频如下：
-通过网盘分享的文件：UR5机械臂控制.mp4
+
+UR5机械臂控制.mp4
 链接: https://pan.baidu.com/s/18Dl0vfPoUtRW0u7ojrHFkw?pwd=gynf 提取码: gynf 
---来自百度网盘超级会员v5的分享
 
 源代码位于src文件夹
 
